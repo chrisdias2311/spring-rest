@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class FirstAppApplication {
 
 	public static void main(String[] args) {
-	//hi gonna merge this
+	//removing comment
 	SpringApplication.run(FirstAppApplication.class, args);
 	}
 

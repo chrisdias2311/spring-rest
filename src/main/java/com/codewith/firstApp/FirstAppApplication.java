@@ -11,7 +11,7 @@ public class FirstAppApplication {
 3. Line number 3 
 
 	public static void main(String[] args random) { 
-	
+        Syuste.out.println("HII");	
 	SpringApplication.run(FirstAppApplication.class, args);
 //comment
 	}

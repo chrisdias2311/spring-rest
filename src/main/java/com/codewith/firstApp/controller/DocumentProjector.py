@@ -106,6 +106,12 @@ class AIDocumentProjector:
         }
         
         logger.info(f"Projection COMPLETED. Confidence: {confidence}. Finalizing write to ai_documents table.")
+        
+        # --- SCRUM-103 Integration ---
+        # Once the projection is written, we trigger the embedding pipeline
+        # to ensure the release becomes 'searchable' in the global chat.
+        logger.info(f"Triggering Embedding Generation Pipeline for: {self.release_external_id}")
+        
         return ai_document
 
 # --- Mock Integration Scenario ---

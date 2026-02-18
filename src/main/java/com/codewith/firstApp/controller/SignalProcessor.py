@@ -155,9 +155,10 @@ class SignalIntelligencePipeline:
         logger.info(f"Persisting Signal {signal['signal_id']} to RDS (Signals Table)")
         logger.info(f"Streaming Signal Audit to Supabase for GTM visibility")
         
-        # Mocking the database "Save" operation
-        # In production, this would be: 
-        # db.execute("INSERT INTO signals ...", signal)
+        # --- SCRUM-102 Integration ---
+        # In a real system, this would publish to a message broker (RabbitMQ/SQS)
+        # which the DocumentProjector consumes.
+        logger.info(f"Notifying Projection Engine of new signal for Release: {self.release_external_id}")
         
         return signal
 
